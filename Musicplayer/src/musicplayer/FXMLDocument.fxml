@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="569.0" prefWidth="828.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="musicplayer.FXMLDocumentController">
+   <bottom>
+      <VBox prefHeight="50.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Button minWidth="51.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="51.0" text="open" />
+                  <Button mnemonicParsing="false" onAction="#stop" text="stop" />
+                  <Button mnemonicParsing="false" onAction="#slower" text="&lt;&lt;&lt;" />
+                  <Button mnemonicParsing="false" onAction="#fast" text="&gt;&gt;" />
+                  <Button mnemonicParsing="false" onAction="#faster" text="&gt;&gt;&gt;" />
+                  <Button mnemonicParsing="false" onAction="#slow" text="&lt;&lt;" />
+                  <Button mnemonicParsing="false" onAction="#play" text="play" />
+                  <Button mnemonicParsing="false" onAction="#exit" text="exit" />
+                  <Button mnemonicParsing="false" onAction="#pause" text="pause" />
+                  <Button fx:id="bprev" mnemonicParsing="false" onAction="#prev" text="previous" />
+                  <Button fx:id="bnext" mnemonicParsing="false" onAction="#next" text="next" />
+                  <Button fx:id="add" mnemonicParsing="false" onAction="#bookmark" text="+" />
+                  <Slider fx:id="slider" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+   <center>
+      <StackPane prefHeight="491.0" prefWidth="694.0" BorderPane.alignment="CENTER">
+         <children>
+            <MediaView fx:id="mediaview" fitHeight="300.0" fitWidth="500.0" />
+            <Slider fx:id="seeSlider" StackPane.alignment="BOTTOM_CENTER" />
+         </children>
+      </StackPane>
+   </center>
+   <top>
+      <ComboBox fx:id="combobox" onDragDetected="#exit" onDragDone="#exit" onDragDropped="#exit" onDragEntered="#exit" onDragExited="#exit" onDragOver="#exit" onMouseDragEntered="#exit" onMouseDragExited="#exit" onMouseDragOver="#exit" onMouseDragReleased="#exit" prefHeight="28.0" prefWidth="830.0" promptText="MUSIC" BorderPane.alignment="BOTTOM_LEFT" />
+   </top>
+   <right>
+      <VBox fx:id="playlist" prefHeight="491.0" prefWidth="191.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="searchfield" promptText="SEARCH MUSIC" />
+            <Button mnemonicParsing="false" onAction="#search" prefHeight="32.0" prefWidth="194.0" text="SEARCH" />
+            <ComboBox fx:id="bookmark" prefHeight="28.0" prefWidth="194.0" promptText="BOOKMARK" />
+            <Button mnemonicParsing="false" onAction="#playbk" prefHeight="29.0" prefWidth="191.0" text="PLAY BOOKMARK" />
+            <ComboBox fx:id="recentlyplayed" prefHeight="28.0" prefWidth="190.0" promptText="RECENTLY PLAYED" />
+            <Button mnemonicParsing="false" onAction="#playrp" prefHeight="32.0" prefWidth="191.0" text="PLAY RECENTLY PLAYED " />
+            <Label prefHeight="50.0" prefWidth="191.0" text="PLAYLISTS " textFill="#c51515">
+               <font>
+                  <Font name="Algerian" size="24.0" />
+               </font>
+            </Label>
+            <Button minWidth="30.0" mnemonicParsing="false" onAction="#playlist1" prefHeight="32.0" prefWidth="190.0" text="ADD TO PLAYLIST 1" />
+            <ComboBox fx:id="playlist1" prefHeight="28.0" prefWidth="199.0" promptText="PLAYLIST 1" />
+            <Button mnemonicParsing="false" onAction="#playlist2" prefHeight="32.0" prefWidth="192.0" text="ADD TO PLAYLIST 2" />
+            <ComboBox fx:id="playlist2" prefHeight="28.0" prefWidth="198.0" promptText="PLAYLIST 2" />
+            <Button mnemonicParsing="false" onAction="#playlist3" prefHeight="32.0" prefWidth="192.0" text="ADD TO PLAYLIST 3" />
+            <ComboBox fx:id="playlist3" prefHeight="28.0" prefWidth="194.0" promptText="PLAYLIST 3" />
+            <Button mnemonicParsing="false" onAction="#playlist4" prefHeight="32.0" prefWidth="194.0" text="ADD TO PLAYLIST 4" />
+            <ComboBox fx:id="playlist4" prefHeight="28.0" prefWidth="194.0" promptText="PLAYLIST 4" />
+         </children>
+      </VBox>
+   </right>
+</BorderPane>
